@@ -1,0 +1,20 @@
+---------------- 
+CLASS SUMMARY 
+---------------- 
+Residential:1263734
+Residual Sub Area:2580
+Industrial:922
+Major Park:0
+---------------- 
+SECTOR SUMMARY 
+---------------- 
+SOUTH:227421
+EAST:58405
+NORTHEAST:185562
+NORTH:160576
+CENTRE:199977
+NORTHWEST:175448
+SOUTHEAST:135314
+WEST:124533
+---------------- 
+There are 303 lines in the file
