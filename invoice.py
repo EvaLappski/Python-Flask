@@ -1,7 +1,14 @@
 import openpyxl
 import sys
+from flask import Flask
+app = Flask(__name__)
+from flask import request
+from flask import render_template
+import json
+from flask_cors import CORS
+CORS(app)
 
-book = openpyxl.load_workbook('master_file.xlsx')
+book = openpyxl.load_workbook('DatabaseEva.xlsx')
 sheet = book.active
 sheets = book.sheetnames
 file = open('invoice.txt', 'a')
@@ -128,6 +135,7 @@ Build.build_the_master_lists()
 
 sys.stdout = open('invoice.txt','wt')
 class Create ():
+	@staticmethod
 	def create_invoice(inv):
 		for obj in invoice_list:
 			if obj['InvoiceNo'] == int(inv):
@@ -136,8 +144,7 @@ class Create ():
 				print('Date:', obj["Date"])
 				print('Invoice #:', inv)
 				print('Customer #:', cust_ref)
-				print('_________________________')		
-				
+				print('_________________________')				
 		for obj in customer_list:
 			if obj['CustomerNo']== cust_ref:
 				print('Customer:',obj['Customer'])
@@ -160,6 +167,14 @@ class Create ():
 						print('__________________________________________________________')
 		print('Grand Total: $', grand_total)	
 
-
 Create.create_invoice(5)
 
+
+@app.route("/info/")
+def info():
+	return json.dumps(customer_list)
+
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', debug=True)
+	
