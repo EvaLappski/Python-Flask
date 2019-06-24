@@ -23,7 +23,7 @@ db.session.commit()
 # print(all_customers)
 
 # DELETE
-delete_customer = Customer.query.get(3)
+delete_customer = Customer.query.get(1)
 db.session.delete(delete_customer)
 db.session.commit()
 print("test",all_customers)
