@@ -2,9 +2,8 @@ import openpyxl
 import sys
 from flask import Flask
 app = Flask(__name__)
-from flask import request
-from flask import render_template
 import json
+from flask import request
 from flask_cors import CORS
 CORS(app)
 

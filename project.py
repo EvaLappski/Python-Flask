@@ -1,7 +1,9 @@
 import os
-from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
 import json
+from flask import request
+
 # from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -9,6 +11,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+from flask_cors import CORS
+CORS(app)
 # Migrate(app,db)
 
 class Student(db.Model):
@@ -115,7 +119,7 @@ def project():
 
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', debug=True)
+	app.run(debug=True)
 
 
 
