@@ -24,8 +24,8 @@ Omar = Student('Omar','Hussain','https://www.linkedin.com/in/omar-hussain',	'htt
 Carrie = Student('Carrie','Nermo','https://www.linkedin.com/in/carrienermo','https://github.com/KrakenYYC', 150, 1)
 Alex = Student('Alex','Jinga','https://www.linkedin.com/in/alex-jinga', 'https://github.com/alexjinga', 250, 4)
 Dustin = Student('Dustin','Joynt', 'https://www.linkedin.com/in/dustin-joynt','https://github.com/dustinjoynt', 250, 4)
-# James	Kiernan	https://www.linkedin.com/in/james-kiernan1/	https://github.com/JamesKiernanYYC
-# Jinbong	Lee	www.linkedin.com/in/Jinbong	https://ljb6685.github.io
+James = Student('James','Kiernan','https://www.linkedin.com/in/james-kiernan1/','https://github.com/JamesKiernanYYC', 250, 4)
+Jinbong = Student('Jinbong','Lee', 'https://www.linkedin.com/in/Jinbong', 'https://ljb6685.github.io' ,250, 4)
 # Fawad	Malik	https://www.linkedin.com/in/fawad-malik/	https://github.com/Tech2019
 # Roman	Mirakhmedov	https://www.linkedin.com/in/mirakhmedov/	https://github.com/rm-evolveu/
 # Niloufar	Naderi	https://linkedin.com/in/nilou-naderi/	https://github.com/ninaderi
@@ -63,7 +63,7 @@ rainforester = Project('Rainforester')
 
 print(Eva.student_id)
 
-db.session.add_all([Eva, Dima, Shane, Linden, Trent, Ian, Cheryl, Seun, Jarvis, Luis, Gio, Byron, Kristina, Lauren, Jawad, Matt, Greg, Licedt,Omar, Carrie, Alex, Dustin])
+db.session.add_all([Eva, Dima, Shane, Linden, Trent, Ian, Cheryl, Seun, Jarvis, Luis, Gio, Byron, Kristina, Lauren, Jawad, Matt, Greg, Licedt,Omar, Carrie, Alex, Dustin, James, Jinbong])
 db.session.add_all([ a,b,c,d,e,f,g,h,i,j,k,l,m])
 db.session.add_all([mindfuel, cultivatr, library, rainforester])
 
