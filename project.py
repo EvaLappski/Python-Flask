@@ -104,18 +104,7 @@ class Project(db.Model):
 # 		comp_list_master.append(comp_list_dict)
 # 	return json.dumps(comp_list_master)
 
-# @app.route("/project/")
-# def project():
-# 	project_list_master = []
-# 	project_list = Project.query.all()
-# 	for project in project_list:
-# 		project_list_dict = {
-# 		'Project ID' : project.project_id,
-# 		'Project Name' : project.project_name
-# 		}
-# 		print (project.project_name)
-# 		project_list_master.append(project_list_dict)
-# 	return json.dumps(project_list_master)	
+
 
 @app.route('/search/<first_name>/')
 def search(first_name = None):
@@ -160,7 +149,36 @@ def editcomp():
 	db.session.add(edit)
 	db.session.commit()
 	
-	
+@app.route('/comp/<comp_num>/')
+def searchcomp(comp_num = None):
+	comp_master = []
+
+	comp_list = Competency.query.filter_by(comp_num = comp_num)
+	print(comp_list)
+	for comp in comp_list:
+		comp_dict = {
+		'comp_ID': comp.comp_id,
+		'comp_num': comp.comp_num,
+		'comp_name' : comp.comp_name,
+		'unit_effort': comp.unit_effort,
+		'percent_complete' :comp.percent_complete 
+		}
+		print(comp.comp_name, comp.comp_num)
+		comp_master.append(comp_dict)
+	return json.dumps(comp_master)
+
+@app.route("/project/<project_id>")
+def project(project_id = None):
+	project_list_master = []
+	project_list = Project.query.filter_by(project_id = project_id)
+	for project in project_list:
+		project_list_dict = {
+		'Project_ID' : project.project_id,
+		'Project_Name' : project.project_name
+		}
+		print (project.project_name)
+		project_list_master.append(project_list_dict)
+	return json.dumps(project_list_master)	
 
 			
 if __name__ == '__main__':

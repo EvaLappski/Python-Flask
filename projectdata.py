@@ -64,7 +64,7 @@ rainforester = Project('Rainforester')
 print(Eva.student_id)
 
 db.session.add_all([Eva, Dima, Shane, Linden, Trent, Ian, Cheryl, Seun, Jarvis, Luis, Gio, Byron, Kristina, Lauren, Jawad, Matt, Greg, Licedt,Omar, Carrie, Alex, Dustin, James, Jinbong])
-db.session.add_all([ a,b,c,d,e,f,g,h,i,j,k,l,m])
+db.session.add_all([ a,b,c,d,e,f,g,h,i,j,k,l,m, n, o, p, q, r, s, t, u])
 db.session.add_all([mindfuel, cultivatr, library, rainforester])
 
 db.session.commit()
