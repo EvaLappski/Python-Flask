@@ -12,7 +12,7 @@ customer_one = Customer.query.get(1)
 # print(customer_one.customer_name)
 
 #FILTER
-search = Customer.query.filter_by(contact='Chris Sebolsky')
+# search = Customer.query.filter_by(contact='Chris Sebolsky')
 # print(search.all())
 
 #UPDATE
@@ -23,10 +23,10 @@ db.session.commit()
 # print(all_customers)
 
 # DELETE
-delete_customer = Customer.query.get(1)
-db.session.delete(delete_customer)
-db.session.commit()
-print("test",all_customers)
+# delete_customer = Customer.query.get(1)
+# db.session.delete(delete_customer)
+# db.session.commit()
+# print("test",all_customers)
 
 
 

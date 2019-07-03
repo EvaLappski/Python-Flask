@@ -1,11 +1,7 @@
 import openpyxl
 import sys
-from flask import Flask
-app = Flask(__name__)
 import json
-from flask import request
-from flask_cors import CORS
-CORS(app)
+
 
 book = openpyxl.load_workbook('DatabaseEva.xlsx')
 sheet = book.active
@@ -19,8 +15,8 @@ line_list = []
 product_list = []
 values=[]
 
-
 class Build ():
+
 	@staticmethod
 	def check_for_blanks():
 		for sheet in book:
@@ -166,14 +162,6 @@ class Create ():
 						print('__________________________________________________________')
 		print('Grand Total: $', grand_total)	
 
-Create.create_invoice(5)
+Create.create_invoice(6)
 
-
-@app.route("/info/")
-def info():
-	return json.dumps(customer_list)
-
-
-if __name__ == '__main__':
-	app.run(host='0.0.0.0', debug=True)
 	

@@ -66,46 +66,6 @@ class Project(db.Model):
 		return f"{self.project_name}"
 
 
-
-# @app.route("/student/")
-# def build():
-# 	student_list_master = []
-# 	student_list = Student.query.all()
-# 	print(student_list)
-# 	for student in student_list:
-# 		student_list_dict = {
-# 		'Student_ID': student.student_id,
-# 		'First_Name': student.first_name,
-# 		'Last_Name' : student.last_name,
-# 		'LinkedIn' : student.linkedIn,
-# 		'GitHub' : student.github,
-# 		'Competency' : student.comp_id,
-# 		'Project': student.project_id
-# 		}
-# 		print(student.first_name, student.last_name)
-# 		student_list_master.append(student_list_dict)
-# 	return json.dumps(student_list_master)
-
-
-# @app.route("/comp/")
-# def comp():
-# 	comp_list_master = []
-# 	comp_list = Competency.query.all()
-# 	print(comp_list)
-# 	for comp in comp_list:
-# 		comp_list_dict = {
-# 		'Competency ID': comp.comp_id	,
-# 		'Competency Number' : comp.comp_num,
-# 		'Competency Name' : comp.comp_name,
-# 		'Units Effort': comp.unit_effort,
-# 		'Percent Complete': comp.percent_complete,
-# 		}
-# 		print(comp.comp_num, comp.comp_name)
-# 		comp_list_master.append(comp_list_dict)
-# 	return json.dumps(comp_list_master)
-
-
-
 @app.route('/search/<first_name>/')
 def search(first_name = None):
 	print (first_name)
