@@ -43,5 +43,6 @@ class TestSyntax(unittest.TestCase):
 			self.assertEqual(syntax.tax_calc(250000), 61796.57)
 		
 
-
+if __name__ == '__main__':
+	unittest.main()
 		
