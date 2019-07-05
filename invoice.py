@@ -162,6 +162,6 @@ class Create ():
 						print('__________________________________________________________')
 		print('Grand Total: $', grand_total)	
 
-Create.create_invoice(6)
+Create.create_invoice(4)
 
 	
